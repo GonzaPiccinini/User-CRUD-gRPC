@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/GonzaPiccinini/practice-grpc/user/userpb";
+
+service UserService{
+}
