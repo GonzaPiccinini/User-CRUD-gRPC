@@ -4,5 +4,25 @@ package user;
 
 option go_package = "github.com/GonzaPiccinini/practice-grpc/user/userpb";
 
+enum Gender {
+    MALE = 0;
+    FEMALE = 1;
+    UNDEFINED = 2;
+}
+
+message RegisterUserRequest {
+    string name = 1;
+    string last_name = 2;
+    Gender gender = 3;
+    uint32 age = 4;
+    string email = 5;
+    string password = 6;
+}
+
+message RegisterUserResponse {
+    string id = 1;
+}
+
 service UserService{
+    rpc RegisterUser (RegisterUserRequest) returns (RegisterUserResponse);
 }
